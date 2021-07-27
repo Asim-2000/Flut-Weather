@@ -35,9 +35,9 @@ class _LoginState extends State<Login> {
                 child: Column(children: [
                   TextFormField(
                     onChanged: (value) {
-                      Name = value;
-                      setState(
-                          () {}); // setState calls build method again i.e it re renders UI
+                      setState(() {
+                        Name = value;
+                      }); // setState calls build method again i.e it re renders UI
                     },
                     decoration: InputDecoration(
                         hintText: "Enter UserName", labelText: "UserName"),

@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           fontFamily: GoogleFonts.lato().fontFamily),
-      home: Login(),
-      // routes: {Login.routeName: (context) => Login()},
+      initialRoute: Login.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        Login.routeName: (context) => Login()
+      },
     );
   }
 }

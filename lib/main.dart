@@ -2,8 +2,10 @@ import 'package:catalog_app/screens/home-screen.dart';
 import 'package:catalog_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:catalog_app/screens/login-screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 
-void main() {
+Future main() async {
+  await DotEnv.load(fileName: ".env");
   runApp(MyApp());
 }
 

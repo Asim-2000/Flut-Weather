@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyDrawer extends StatelessWidget {
   final String imageUrl =
@@ -26,30 +26,55 @@ class MyDrawer extends StatelessWidget {
                   CupertinoIcons.home,
                   color: Colors.white,
                 ),
-                title: Text(
-                  "Home",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(color: Colors.white),
+                title: InkWell(
+                  child: Text(
+                    "My Website",
+                    textScaleFactor: 1.2,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () => launch("https://Asim-2000.github.io"),
+                )),
+            ListTile(
+                leading: Icon(
+                  CupertinoIcons.link_circle,
+                  color: Colors.white,
+                ),
+                title: InkWell(
+                  child: Text(
+                    "Github",
+                    textScaleFactor: 1.2,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () => launch("https://www.github.com/Asim-2000"),
                 )),
             ListTile(
                 leading: Icon(
                   CupertinoIcons.profile_circled,
                   color: Colors.white,
                 ),
-                title: Text(
-                  "Profile",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(color: Colors.white),
+                title: InkWell(
+                  child: Text(
+                    "Linkedin",
+                    textScaleFactor: 1.2,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () =>
+                      launch("https://www.linkedin.com/in/asim-khaskheli/"),
                 )),
             ListTile(
                 leading: Icon(
                   CupertinoIcons.mail_solid,
                   color: Colors.white,
                 ),
-                title: Text(
-                  "Email",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(color: Colors.white),
+                title: InkWell(
+                  child: Text(
+                    "Contact Me",
+                    textScaleFactor: 1.2,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    launch("mailto:m.asimkhaskheli@gmail.com");
+                  },
                 ))
           ],
         ),

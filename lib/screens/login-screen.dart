@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
                   height: 20.0,
                 ),
                 Text(
-                  "Hello World",
+                  "Login",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 Padding(

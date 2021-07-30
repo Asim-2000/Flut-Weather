@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
                   height: 20.0,
                 ),
                 Text(
-                  "Hello World $name",
+                  "Hello World",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 Padding(

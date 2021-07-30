@@ -1,10 +1,8 @@
 // import 'package:catalog_app/routes/routes.dart';
-import 'package:catalog_app/screens/home-screen.dart';
+import 'package:catalog_app/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
-  static final String routeName = "/login";
-
   @override
   _LoginState createState() => _LoginState();
 }
@@ -69,7 +67,7 @@ class _LoginState extends State<Login> {
                     ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
-                          Navigator.pushNamed(context, HomeScreen.routeName);
+                          Navigator.pushNamed(context, MyRoutes.homeRoute);
                         }
                       },
                       child: Text("Login"),

@@ -1,11 +1,8 @@
 import 'package:catalog_app/models/weather-model.dart';
 import 'package:catalog_app/services/data-service.dart';
-import 'package:catalog_app/widgets/my-drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  static final String routeName = "/home";
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -61,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      drawer: MyDrawer(),
+      // drawer: MyDrawer(),
     );
   }
 }

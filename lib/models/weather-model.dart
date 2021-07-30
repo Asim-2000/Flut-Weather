@@ -25,6 +25,7 @@ class TempInfo {
 
 class WeatherResponse {
   final String cityName;
+  final int code;
   final TempInfo tempInfo;
   final WeatherInfo weatherInfo;
 
@@ -32,17 +33,21 @@ class WeatherResponse {
     return 'https://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png';
   }
 
-  WeatherResponse({this.cityName, this.tempInfo, this.weatherInfo});
+  WeatherResponse({this.cityName, this.tempInfo, this.weatherInfo, this.code});
 
   factory WeatherResponse.fromJson(Map<String, dynamic> json) {
-    final cityName = json['name'];
-    final tempInfoJson = json['main'];
-    final tempInfo = TempInfo.fromJson(tempInfoJson);
+    final code = json['cod'];
+    if (code == 200) {
+      final cityName = json['name'];
+      final tempInfoJson = json['main'];
+      final tempInfo = TempInfo.fromJson(tempInfoJson);
 
-    final weatherInfoJson = json['weather'][0];
-    final weatherInfo = WeatherInfo.fromJson(weatherInfoJson);
+      final weatherInfoJson = json['weather'][0];
+      final weatherInfo = WeatherInfo.fromJson(weatherInfoJson);
 
-    return WeatherResponse(
-        cityName: cityName, tempInfo: tempInfo, weatherInfo: weatherInfo);
+      return WeatherResponse(
+          cityName: cityName, tempInfo: tempInfo, weatherInfo: weatherInfo);
+    }
+    return null;
   }
 }

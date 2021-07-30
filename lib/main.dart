@@ -1,3 +1,4 @@
+import 'package:catalog_app/routes/routes.dart';
 import 'package:catalog_app/screens/home-screen.dart';
 import 'package:catalog_app/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: MyTheme.lightTheme(context),
-      initialRoute: Login.routeName,
+      initialRoute: MyRoutes.loginRoute,
       routes: {
-        HomeScreen.routeName: (context) => HomeScreen(),
-        Login.routeName: (context) => Login()
+        MyRoutes.homeRoute: (context) => HomeScreen(),
+        MyRoutes.loginRoute: (context) => Login()
       },
     );
   }
